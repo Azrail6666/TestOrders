@@ -1,0 +1,25 @@
+@import "variables";
+.total-counter {
+  @extend %column;
+  width: 20%;
+}
+
+.total-counter-title {
+  @extend %row;
+  justify-content: center;
+  background: black;
+  span {
+    font-size: 21px;
+    color: white;
+  }
+}
+
+.total-counter-value {
+  @extend %row;
+  justify-content: center;
+  border: 1px solid gray;
+  span {
+    font-weight: bold;
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,41 @@
+@import "variables";
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+h1, h2, h3, h4, h5, h6, span {
+    margin-block: 0px;
+}
+
+img {
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: $violet-gradient;
+  border-radius: 15px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: $blue-gradient;
+}
+
+.main-data {
+  @extend %row;
+  margin-top: 40px;
+  justify-content: space-around;
+}

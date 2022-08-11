@@ -1,0 +1,23 @@
+.total-counter-value, .total-counter-title {
+  display: flex; }
+
+.total-counter {
+  display: flex;
+  flex-direction: column; }
+
+.total-counter {
+  width: 20%; }
+
+.total-counter-title {
+  justify-content: center;
+  background: black; }
+  .total-counter-title span {
+    font-size: 21px;
+    color: white; }
+
+.total-counter-value {
+  justify-content: center;
+  border: 1px solid gray; }
+  .total-counter-value span {
+    font-weight: bold;
+    font-size: 48px; }

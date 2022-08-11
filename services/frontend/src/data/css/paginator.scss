@@ -1,0 +1,24 @@
+@import "variables";
+.pagination {
+  @extend %row;
+  margin-top: 20px;
+  justify-content: center;
+  button {
+    @extend %button;
+    color: black;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+  }
+  span {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+  }
+  .active {
+    background: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.4
+    environment:
+      POSTGRES_DB: "channelservice"
+      POSTGRES_USER: "channelserviceadmin"
+      POSTGRES_PASSWORD: "QAZplmCvbn1!"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - 5432:5432
+  redis:
+    image: redis:7.0.4
+  frontend:
+    container_name: frontend
+    build: ./services/frontend
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+  flask-app:
+    container_name: flask-app
+    build: ./services/backend
+    ports:
+      - "9000:5000"
+    environment:
+      - FLASK_APP=app
+      - FLASK_RUN_HOST=0.0.0.0
+      - DATABASE_URL=postgresql://channelservice:QAZplmCvbn1@db:5432/channelserviceadmin
+    depends_on:
+      - db
+  celery-worker:
+    container_name: celery-worker
+    build:
+      context: ./services/backend
+    hostname: celery-worker
+    entrypoint: celery
+    command: -A run_shedulers worker -B
+    links:
+      - redis
+      - db
+    depends_on:
+      - redis
+      - db

@@ -1,0 +1,58 @@
+@import "variables";
+
+.table-chart {
+  @extend %column;
+  width: 70%;
+}
+
+.table-chart-header {
+  @extend %row;
+}
+
+.table-chart-button {
+  @extend %button;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: black;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.table-chart-data {
+
+}
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+
+th {
+  padding: 10px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+td {
+  text-align: end;
+  border: 1px solid gray;
+  padding: 3px;
+}
+
+.pagination {
+  button {
+
+  }
+  span {
+
+  }
+
+  .active {
+
+  }
+}

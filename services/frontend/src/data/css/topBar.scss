@@ -1,0 +1,11 @@
+@import "variables";
+
+.top-bar {
+  @extend %row;
+  background: #93e8a2;
+}
+
+
+.top-bar-logo {
+  width: 100px;
+}
